@@ -169,6 +169,13 @@ export type MSTeamsConfig = {
   feedbackReflectionCooldownMs?: number;
   /** Bot Framework OAuth SSO (signin/tokenExchange + signin/verifyState) settings. */
   sso?: MSTeamsSsoConfig;
+  /** Delegated auth settings for user-scoped Graph API actions (e.g., reactions). */
+  delegatedAuth?: {
+    /** Enable delegated auth (user sign-in for Graph actions that need user scope). */
+    enabled?: boolean;
+    /** Additional scopes to request during OAuth consent. */
+    scopes?: string[];
+  };
 };
 
 declare module "./types.channels.js" {

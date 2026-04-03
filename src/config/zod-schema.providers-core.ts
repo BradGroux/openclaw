@@ -1577,10 +1577,17 @@ export const MSTeamsConfigSchema = z
     feedbackEnabled: z.boolean().optional(),
     feedbackReflection: z.boolean().optional(),
     feedbackReflectionCooldownMs: z.number().int().min(0).optional(),
+<<<<<<< HEAD
     sso: z
       .object({
         enabled: z.boolean().optional(),
         connectionName: z.string().optional(),
+=======
+    delegatedAuth: z
+      .object({
+        enabled: z.boolean().optional(),
+        scopes: z.array(z.string()).optional(),
+>>>>>>> 2f35f782b5 (msteams: integrate delegated auth (config, token storage, react enablement))
       })
       .strict()
       .optional(),
